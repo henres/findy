@@ -1,0 +1,15 @@
+<div class="list">
+    <h1>Ressource list</h1>
+    <div v-for="(ressource, n) in ressources">
+        <p>
+            <span class="ressource">
+                {{ ressource.kind }}
+                {{ ressource.description }}
+            </span>
+        </p>
+    </div>
+    <!-- <p>
+        <input v-model="newRessource">
+        <button @click="addTags">Ajouter des tags</button>
+    </p> -->
+</div>

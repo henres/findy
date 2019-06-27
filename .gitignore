@@ -1,0 +1,4 @@
+main
+.env
+client/
+clientsrc/node_modules
