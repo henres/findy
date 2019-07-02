@@ -3,15 +3,15 @@ package main
 import (
 	"errors"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 	"strconv"
 	"strings"
-	"log"
 
 	"github.com/gin-gonic/contrib/static"
 	"github.com/gin-gonic/gin"
-    "github.com/joho/godotenv"
+	"github.com/joho/godotenv"
 )
 
 type Ressource struct {
@@ -34,6 +34,8 @@ type AddTag struct {
 /** we'll create a list of jokes */
 var ressources = []Ressource{
 	Ressource{0, "person", "Henri d'Auvigny", "Bordeaux", []Tag{tags[0], tags[1]}},
+	Ressource{0, "person", "Jean Dupont", "Bordeaux", []Tag{tags[2]}},
+	Ressource{0, "doc", "Kubernetes", "Bordeaux", []Tag{tags[0], tags[1]}},
 }
 
 /** we'll create a list of jokes */
@@ -46,7 +48,7 @@ var tags = []Tag{
 }
 
 func main() {
-	if err:= godotenv.Load(); err != nil {
+	if err := godotenv.Load(); err != nil {
 		log.Print("No .env file to load")
 	} else {
 		log.Print(".env loaded")
